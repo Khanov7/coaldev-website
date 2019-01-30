@@ -1,0 +1,21 @@
+
+{%if form%}
+<form method="post" enctype="multipart/form-data">
+
+    {%csrf_token%}
+    {{form.errors}}
+    {{form.non_field_errors}}
+    {{ form.as_p}}
+
+    <button type="submit">login</button>
+
+</form>
+{% endif %}
+
+{% if result %}
+{%for res in result%}
+<h1> {{res.first_name}} </h1>
+
+{% endfor%}
+
+{% endif %}
